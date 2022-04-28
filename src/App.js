@@ -6,7 +6,7 @@ import Detail from './pages/Detail'
 
 import { Link, Route } from 'wouter'
 
-export default function App() {
+function App() {
     return (
         <div className='App'>
             <section className='App-content'>
@@ -24,3 +24,5 @@ export default function App() {
         </div>
     )
 }
+
+export default App

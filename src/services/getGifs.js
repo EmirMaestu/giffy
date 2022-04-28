@@ -1,4 +1,4 @@
-const apiKey = 'dIJrma20pSU6ymMwWnDbiaT7NFHeAGVa'
+const apiKey = 'z5RbGHnWqsM2N2GolESWiXwR3g59ucoG'
 
 const fromApiResponseToGifs = apiResponse => {
     const { data = [] } = apiResponse
