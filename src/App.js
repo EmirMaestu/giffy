@@ -6,6 +6,7 @@ import Detail from './pages/Detail'
 
 import { Link, Route } from 'wouter'
 import StaticContext from './context/StaticContext'
+import { GifContextProvider } from './context/GifContext'
 
 function App() {
     return (
@@ -19,9 +20,11 @@ function App() {
                             src='/logo.png'
                         />
                     </Link>
-                    <Route component={Home} path='/' />
-                    <Route component={SearchResults} path='/search/:keyword' />
-                    <Route component={Detail} path='/gif/:id' />
+                    <GifContextProvider>
+                        <Route component={Home} path='/' />
+                        <Route component={SearchResults} path='/search/:keyword' />
+                        <Route component={Detail} path='/gif/:id' />
+                    </GifContextProvider>
                 </section>
             </div>
         </StaticContext.Provider>
