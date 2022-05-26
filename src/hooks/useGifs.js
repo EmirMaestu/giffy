@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import getGifs from '../services/getGifs'
+import GifContext from '../context/GifContext'
 
 export function useGifs({ keyword } = { keyword: null }) {
     const [loading, setLoading] = useState(false)
-    const [gifs, setGifs] = useState([])
+    const { gifs, setGifs } = useContext(GifContext )
 
     useEffect(() => {
         setLoading(true)
@@ -15,6 +16,6 @@ export function useGifs({ keyword } = { keyword: null }) {
             //guardo
             localStorage.setItem('lastKeyword', keyword)
         })
-    }, [keyword])
+    }, [keyword, setGifs])
     return { loading, gifs }
 }
